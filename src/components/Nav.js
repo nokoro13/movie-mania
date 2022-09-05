@@ -1,15 +1,18 @@
-    // Nav
+// Nav
 
 import { NavLink } from 'react-router-dom';
+import HamburgerMenu from './HamburgerMenu';
 
-    const Nav = () => {
+  const Nav = () => {
     function blur(e) {
-        e.target.blur();
+      e.target.blur();
     }
-
+    
   return (
     <nav className="main-nav" onClick={blur}>
-      <ul>
+      <NavLink to="/" className="site-title">Site Title</NavLink>
+    
+      <ul className='nav-menu'>
         <li className='nav-item'>
           <NavLink to="/">Home</NavLink>
         </li>
@@ -20,14 +23,15 @@ import { NavLink } from 'react-router-dom';
         <li className='nav-item'>
           <NavLink to="/favorites">Favorites</NavLink>
         </li>
+        
       </ul>
-
-      <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <div className='hamburger'>
+        <HamburgerMenu/>
+          
+        
       </div>
-
+          
+        
     </nav>
   );
 };

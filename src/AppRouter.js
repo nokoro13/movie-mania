@@ -1,7 +1,7 @@
 
 import './App.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import Nav from "./Nav";
+import Nav from "./components/Nav";
 
 import PageHome from './pages/PageHome';
 import PageAbout from './pages/PageAbout';
@@ -20,7 +20,6 @@ function AppRouter() {
             <Route path="about" element={<PageAbout />} />
             <Route path='favorites' element={<PageFavorites />} />
           </Routes>
-          
         </main>
       </div>
     </BrowserRouter>

@@ -7,7 +7,7 @@ const Movie = ({ title, release_date, vote_average, overview, poster_path }) => 
         <img src={MOVIE_POSTER + poster_path} alt={title} />
 
         <div className='movie-data'>
-            <h3>{title}</h3>
+            <h3 className='movie-title'>{title}</h3>
                 
                 <p>Rating: {vote_average}</p>
                 <p>Release Date: {release_date}</p>

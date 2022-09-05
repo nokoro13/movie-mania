@@ -23,15 +23,10 @@ const PageHome = () => {
 
     return (
         
-        <section>
+        <section className='page-heading'>
             <h2>Home Page</h2>
             <p>Here Are Some Movies</p>
-            <div className='toggle-home-movies-cat'>
-                <button>Popular</button>
-                <button>Best Rated</button>
-                <button>Now Playing</button>
-                <button>Coming Soon</button>
-            </div>
+        
 
             <div className='movie-layout'>
                 {movies.length > 0 && movies.map((movie) => (

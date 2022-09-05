@@ -37,8 +37,6 @@ body {
   list-style: none;
   right: -60px;
   top: -70px;
-  z-index: -100;
-  transition: .4s ease;
 }
 
 .showMenu {

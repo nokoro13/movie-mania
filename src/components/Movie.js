@@ -1,24 +1,31 @@
 import React from 'react';
+import AddFavourites from './AddFavorites';
 
 const MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500';
 
-const Movie = ({ title, release_date, vote_average, overview, poster_path }) => (
+
+const Movie = (props) => {
+    
+    const FavouriteComponent = props.favouriteComponent;
+    
+    return (
     <div className='movie'>
-        <img src={MOVIE_POSTER + poster_path} alt={title} />
+        <img src={MOVIE_POSTER + props.poster_path} alt={props.title} />
 
         <div className='movie-data'>
-            <h3 className='movie-title'>{title}</h3>
+            <h3 className='movie-title'>{props.title}</h3>
                 
-                <p>Rating: {vote_average}</p>
-                <p>Release Date: {release_date}</p>
+                <p>Rating: {props.vote_average}</p>
+                <p>Release Date: {props.release_date}</p>
                 
-                <div className='synopsis'>
+                <div className='synopsis' >
+                    <i className='heart-icon' onClick={()=>props.handleFavsClick(props)}><FavouriteComponent  favouriteComponent={AddFavourites}/></i>
                     <h2>Synopsis:</h2>
-                    <p> {overview}</p>
+                    <p> {props.overview}</p>
                 </div>
 
         </div>
     </div>
-);
+)};
 
 export default Movie;

@@ -9,7 +9,7 @@ const PageAbout = () => {
     return (
         <section className='page-heading'>
             <h2>About page</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nihil, doloremque illum aperiam dolor, est aliquid officia reprehenderit atque voluptatibus rerum pariatur earum nisi quasi modi, enim harum totam rem!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eveniet voluptatem laborum. Tempore ratione fugit neque velit omnis quos est nostrum voluptate. Tenetur saepe culpa quaerat recusandae architecto ullam iste.</p>
         </section>
     )
 

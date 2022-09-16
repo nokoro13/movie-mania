@@ -1,4 +1,3 @@
-
 import './App.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Nav from "./components/Nav";
@@ -8,8 +7,7 @@ import PageAbout from './pages/PageAbout';
 import PageFavorites from './pages/PageFavorite';
 
 
-function AppRouter() {
-
+function AppRouter() { 
   return (
     <BrowserRouter>
       <div className='wrapper'>

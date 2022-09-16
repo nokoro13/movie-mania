@@ -55,6 +55,11 @@ body {
   border: 1px solid white;
   border-top: none;
   transition: .4s ease;
+  list-style: none;
+}
+
+.showMenu .burger-item a {
+  font-size: 1.2rem;
 }
 
 .burger-item a {
@@ -158,8 +163,31 @@ body {
   transform: translateX(0%);
 }
 
+.movie:hover {
+  transform: scale(1.05);
+  transition: .3s ease-in-out;
+}
+
 .movie-title {
   text-decoration: underline;
+}
+
+.heart-icon {
+  color: red;
+}
+
+.heart-fill {
+  fill: red;
+  transition: .6s ease-in-out;
+  scale: 1.1;
+  transform: rotateY(-180deg)rotate(360deg);
+  
+}
+
+.heart-nofill {
+  fill: red;
+  opacity: 50%;
+  transition: .6s ease-in-out;
 }
 
 

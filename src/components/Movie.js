@@ -21,6 +21,9 @@ const Movie = (props) => {
                 
                 <div className='synopsis' >
                     <i className='heart-icon' onClick={()=>props.handleFavsClick(props)}><FavouriteComponent  favouriteComponent={AddFavourites}/></i>
+                    <Link to={`detail/${movieInfo.id}`} state={{title:movieInfo.title, release_date:movieInfo.release_date, vote_average:movieInfo.vote_average, overview:movieInfo.overview, poster_path:movieInfo.poster_path}}>
+                <p>More Info</p>
+                </Link>
                     <h2>Synopsis:</h2>
                     <p> {movieInfo.overview}</p>
                 </div>

@@ -6,6 +6,7 @@ import Nav from "./Nav";
 import PageHome from './pages/PageHome';
 import PageAbout from './pages/PageAbout';
 import PageFavorites from './pages/PageFavorite';
+import {PageDetail} from './pages/PageDetail';
 
 
 function AppRouter() {
@@ -19,6 +20,7 @@ function AppRouter() {
             <Route path="/" exact element={<PageHome />} />
             <Route path="about" element={<PageAbout />} />
             <Route path='favorites' element={<PageFavorites />} />
+            <Route path='detail/:id' element={<PageDetail />} />
           </Routes>
           
         </main>

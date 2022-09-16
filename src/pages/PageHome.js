@@ -40,7 +40,7 @@ const PageHome = () => {
     
             <div className='movie-layout'>
                 {movies.length > 0 && movies.map((movie) => (
-                <Movie key={movie.id} {...movie} handleFavsClick={addFavMovie} favouriteComponent={AddFavourites}/>
+                <Movie key={movie.id}  handleFavsClick={addFavMovie} favouriteComponent={AddFavourites} movie={movie} />
                 ))}
             </div>
 

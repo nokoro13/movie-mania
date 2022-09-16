@@ -1,7 +1,6 @@
-
 import './App.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import Nav from "./Nav";
+import Nav from "./components/Nav";
 
 import PageHome from './pages/PageHome';
 import PageAbout from './pages/PageAbout';
@@ -9,8 +8,7 @@ import PageFavorites from './pages/PageFavorite';
 import {PageDetail} from './pages/PageDetail';
 
 
-function AppRouter() {
-
+function AppRouter() { 
   return (
     <BrowserRouter>
       <div className='wrapper'>
@@ -22,7 +20,6 @@ function AppRouter() {
             <Route path='favorites' element={<PageFavorites />} />
             <Route path='detail/:id' element={<PageDetail />} />
           </Routes>
-          
         </main>
       </div>
     </BrowserRouter>

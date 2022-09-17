@@ -1,0 +1,18 @@
+.about-body {
+  margin: 1rem;
+}
+
+.tmdb-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.tmdb-logo-img {
+  margin-top: 3rem;
+  width: 67px;
+  opacity: 50%;
+}
+
+.about-body p {
+  margin-top: 1.5rem;
+}

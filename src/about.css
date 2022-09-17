@@ -1,5 +1,6 @@
 .about-body {
   margin: 1rem;
+  max-width: 55rem;
 }
 
 .tmdb-flex {
@@ -15,4 +16,9 @@
 
 .about-body p {
   margin-top: 1.5rem;
+}
+@media (min-width: 50rem) {
+  .about-body {
+    margin: auto;
+  }
 }

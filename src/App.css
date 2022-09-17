@@ -190,6 +190,25 @@ body {
   transition: .6s ease-in-out;
 }
 
+.detail-wrapper {
+  position: absolute;
+}
+
+.detail-poster {
+  width: 275px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 6rem;
+}
+
+.detail-content {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
+
 
 
 

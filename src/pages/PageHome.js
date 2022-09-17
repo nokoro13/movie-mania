@@ -36,7 +36,10 @@ const PageHome = () => {
         
         <section className='page-heading'>
             <h2>Home Page</h2>
-            <p>Here Are Some Movies</p>
+            <button>Popular</button>
+            <button>Now Playing</button>
+            <button>Upcoming</button>
+            <button>Top Rated</button>
     
             <div className='movie-layout'>
                 {movies.length > 0 && movies.map((movie) => (

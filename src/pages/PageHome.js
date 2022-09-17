@@ -27,9 +27,14 @@ const PageHome = () => {
 
   
 //add an if statement to make sure the movie is not already in the new array
+//if (!favs.includes(movie)){
+//}
     const addFavMovie = (movie) => {
         const newFavs = [...favs, movie];
-        setFavs(newFavs);
+        if (!favs.includes(movie)){
+            setFavs(newFavs);
+        }
+        console.log(newFavs);   
     }
 
     return (

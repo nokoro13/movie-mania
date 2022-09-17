@@ -9,7 +9,7 @@ const MOVIE_API = 'https://api.themoviedb.org/3/discover/movie?api_key=b7cd5f614
 const PageHome = () => {
 
     const [movies, setMovies] = useState([]);
-    const [favs, setFavs] = useState([]);
+    const [favs, setFavs] = useState( localStorage.getItem('MY_FAVOURITE_MOVIES') ===  null ? [] :  JSON.parse(localStorage.getItem('MY_FAVOURITE_MOVIES') ) );
 
     useEffect(() => {
 		document.title = `Home`;

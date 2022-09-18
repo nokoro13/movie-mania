@@ -128,6 +128,8 @@ body {
   img .detail-poster {
     max-width: 100%;
   }
+
+
 }
 
 .movie {
@@ -211,7 +213,66 @@ body {
   
 }
 
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  padding: 1rem;
+}
 
+button {
+  background-color: #0e2431;
+  border-style: none solid none none;
+  border-color: white;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+@media (min-width: 776px) {
+  .button-wrapper {
+    display: flex;
+    justify-content: left;
+    gap: 5px;
+    padding: 2.5rem 2.5rem 2.5rem 5.3rem;
+    
+  }
+
+  button {
+    background-color: #0e2431;
+    border-style: none solid none none;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+    font-size: 28px;
+    
+  }
+
+  .detail-wrapper {
+    position: relative;
+  }
+
+  .detail-poster {
+    width: 25%;
+    
+    position: absolute;
+    left: 25%;
+    padding: 3rem;
+  }
+
+  .detail-content {
+    padding: 10rem 1rem 1rem 1rem;
+    position: absolute;
+    left: 40%;
+
+  }
+
+}
+
+.more-info {
+  color: white;
+  text-decoration: none;
+}
 
 
 

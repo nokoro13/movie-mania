@@ -50,7 +50,7 @@ const PageHome = () => {
     return (
         
         <section className='page-heading'>
-            <h2>Home Page</h2>
+            <div className="button-wrapper">
             <button onClick={() => {
               setParam("popular");
             }}>Popular</button>
@@ -63,6 +63,7 @@ const PageHome = () => {
             <button onClick={() => {
               setParam("top_rated");
             }}>Top Rated</button>
+            </div>
     
             <div className='movie-layout'>
                 {movies.length > 0 && movies.map((movie) => (

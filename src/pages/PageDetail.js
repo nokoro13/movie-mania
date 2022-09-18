@@ -1,6 +1,6 @@
 import {useLocation} from 'react-router-dom';
 import React from 'react';
-const MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500';
+const MOVIE_POSTER = 'https://image.tmdb.org/t/p/w1280';
 
 export const PageDetail = () => {
     let location = useLocation();

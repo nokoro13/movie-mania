@@ -14,11 +14,12 @@ const MOVIE_API = 'https://api.themoviedb.org/3/movie/popular?api_key=b7cd5f614d
 const PageHome = () => {
     
     const [movies, setMovies] = useState([]);
-    const [favs, setFavs] = useState([]);
+    
     const [param, setParam] = useState('popular');
     
 
     
+    const [favs, setFavs] = useState( localStorage.getItem('MY_FAVOURITE_MOVIES') ===  null ? [] :  JSON.parse(localStorage.getItem('MY_FAVOURITE_MOVIES') ) );
 
     useEffect(() => {
         document.title = `Home`;
@@ -36,9 +37,14 @@ const PageHome = () => {
 
   
 //add an if statement to make sure the movie is not already in the new array
+//if (!favs.includes(movie)){
+//}
     const addFavMovie = (movie) => {
         const newFavs = [...favs, movie];
-        setFavs(newFavs);
+        if (!favs.includes(movie)){
+            setFavs(newFavs);
+        }
+        console.log(newFavs);   
     }
 
     return (

@@ -12,7 +12,7 @@ const MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500';
     
     useEffect(() => {
 		document.title = `Favorites`;
-        const favMov = JSON.parse(localStorage.getItem('MY_FAVOURITE_MOVIES'));
+        const favMov = localStorage.getItem('MY_FAVOURITE_MOVIES')  === null ? [] : JSON.parse(localStorage.getItem('MY_FAVOURITE_MOVIES'));
         console.log(favMov);
         setFavMov(favMov);
 	}, []);
@@ -24,7 +24,7 @@ const MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500';
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quod quia recusandae sit eveniet reprehenderit aliquid fugiat nesciunt incidunt praesentium sint explicabo modi, ullam expedita a autem ratione, exercitationem consequuntur.</p>
             <div >
                 <div className='movie-layout'>
-                    {favMov.map(fav => 
+                    {favMov.length > 0 && favMov.map(fav => 
                        <div key={fav.id} className='movie'>
                            {<img src={MOVIE_POSTER + fav.poster_path} alt={fav.title} />}
                            <div className='movie-data'>

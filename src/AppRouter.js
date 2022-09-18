@@ -15,13 +15,35 @@ function AppRouter() {
         <Nav />
         <main>
           <Routes>
-            <Route path="/" exact element={<PageHome />} />
-            <Route path="about" element={<PageAbout />} />
-            <Route path="favorites" element={<PageFavorites />} />
+            <Route
+              path="/"
+              exact
+              element={
+                <>
+                  {" "}
+                  <PageHome /> <Footer />{" "}
+                </>
+              }
+            />
+            <Route
+              path="about"
+              element={
+                <>
+                  <PageAbout /> <Footer />
+                </>
+              }
+            />
+            <Route
+              path="favorites"
+              element={
+                <>
+                  <PageFavorites /> <Footer />
+                </>
+              }
+            />
             <Route path="detail/:id" element={<PageDetail />} />
           </Routes>
         </main>
-        <Footer />
       </div>
     </BrowserRouter>
   );

@@ -31,12 +31,12 @@ const Movie = (props) => {
                 <p>Release Date: {movieInfo.release_date}</p>
                 
                 <div className='synopsis' >
-                    <i className='heart-icon' onClick={()=>props.handleFavsClick(movieInfo)}><FavouriteComponent  favouriteComponent={AddFavourites}/></i>
-                    <Link to={`detail/${movieInfo.id}`} state={{title:movieInfo.title, release_date:movieInfo.release_date, vote_average:movieInfo.vote_average, overview:movieInfo.overview, poster_path:movieInfo.poster_path}}>
-                <p>More Info</p>
-                </Link>
+                    <i className='heart-icon' onClick={()=>props.handleFavsClick(props)}><FavouriteComponent  favouriteComponent={AddFavourites}/></i>
                     <h2>Synopsis:</h2>
                     <p> {movieInfo.overview}</p>
+                    <Link className="more-info" to={`detail/${movieInfo.id}`} state={{title:movieInfo.title, release_date:movieInfo.release_date, vote_average:movieInfo.vote_average, overview:movieInfo.overview, poster_path:movieInfo.poster_path}}>
+                <p>More Info...</p>
+                </Link>
                 </div>
 
         </div>

@@ -1,4 +1,5 @@
 import {useLocation} from 'react-router-dom';
+import React from 'react';
 const MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500';
 
 export const PageDetail = () => {
@@ -8,16 +9,21 @@ export const PageDetail = () => {
      const {vote_average} = location.state;
      const {release_date} = location.state;
      const {overview} = location.state;
+
      return(
-        <div class="detail-wrapper">
-            <img class="detail-poster" src={MOVIE_POSTER + poster_path} alt={title} />
-            <div class="detail-content">
+        <div className='detail-wrapper'>
+            <img className="detail-poster" src={MOVIE_POSTER + poster_path} alt={title} />
+            <div className='detail-content'>
                <h2>{title}</h2>
-               <p>Rating: {vote_average}</p>
-               <p>Release Date: {release_date}</p>
-               <p>{overview}</p>
+                  
+                  <p>Rating: {vote_average}</p>
+                  <p>Release Date: {release_date}</p>
+                  <p>{overview}</p>
+                  
+               
             </div>
         </div>
      );                                              
 };
 
+export default PageDetail;

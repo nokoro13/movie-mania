@@ -3,21 +3,30 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Movie from '../components/Movie';
 import AddFavourites from '../components/AddFavorites';
+import { useParams } from 'react-router-dom'
 
-const MOVIE_API = 'https://api.themoviedb.org/3/discover/movie?api_key=b7cd5f614d98fb5d0dfc566e1e09dbe8&sort_by=popularity.desc&release_date'
+const MOVIE_API = 'https://api.themoviedb.org/3/movie/popular?api_key=b7cd5f614d98fb5d0dfc566e1e09dbe8&sort_by=popularity.desc&release_date'
+
+
+
+
 
 const PageHome = () => {
-
+    
     const [movies, setMovies] = useState([]);
     const [favs, setFavs] = useState([]);
+    const [param, setParam] = useState('popular');
+    
+
+    
 
     useEffect(() => {
-		document.title = `Home`;
-        fetch(MOVIE_API).then((res) => res.json()).then((data) => {
+        document.title = `Home`;
+       fetch(`https://api.themoviedb.org/3/movie/${param}?api_key=b474f43311f1a19783cd84ac384af0e8`).then((res) => res.json()).then((data) => {
             console.log(data);
             setMovies(data.results.slice(0,12));
         })
-	}, []);
+    }, [param]);
     
     useEffect(() => {
         window.localStorage.setItem('MY_FAVOURITE_MOVIES', JSON.stringify(favs));
@@ -36,10 +45,18 @@ const PageHome = () => {
         
         <section className='page-heading'>
             <h2>Home Page</h2>
-            <button>Popular</button>
-            <button>Now Playing</button>
-            <button>Upcoming</button>
-            <button>Top Rated</button>
+            <button onClick={() => {
+              setParam("popular");
+            }}>Popular</button>
+            <button onClick={() => {
+              setParam("now_playing");
+            }}>Now Playing</button>
+            <button onClick={() => {
+              setParam("upcoming");
+            }}>Upcoming</button>
+            <button onClick={() => {
+              setParam("top_rated");
+            }}>Top Rated</button>
     
             <div className='movie-layout'>
                 {movies.length > 0 && movies.map((movie) => (

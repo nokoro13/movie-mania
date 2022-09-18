@@ -124,6 +124,10 @@ body {
   .nav-item {
     display: flex;
   }
+
+  img .detail-poster {
+    max-width: 100%;
+  }
 }
 
 .movie {
@@ -203,9 +207,7 @@ body {
 }
 
 .detail-content {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  padding: 1rem;
   
 }
 

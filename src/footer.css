@@ -1,0 +1,20 @@
+.footer-flex {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+  margin-left: 1rem;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  height: 55vh;
+  justify-content: flex-end;
+}
+.logo-moovy {
+  width: 45px;
+  height: auto;
+  margin-right: 1rem;
+}

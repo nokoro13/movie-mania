@@ -29,6 +29,4 @@ const PageAbout = () => {
   );
 };
 
-
 export default PageAbout;
-

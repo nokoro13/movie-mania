@@ -21,11 +21,6 @@ const PageHome = () => {
             setMovies(data.results.slice(0,12));
         })
 	}, []);
-
-   useEffect(()=> {
-    window.localStorage.setItem('MY_ICONS', JSON.stringify(favIds));
-    console.log(favIds);
-   });
     
     useEffect(() => {
         window.localStorage.setItem('MY_FAVOURITE_MOVIES', JSON.stringify(favs));

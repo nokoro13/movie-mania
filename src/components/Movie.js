@@ -6,15 +6,11 @@ import AddFavourites from './AddFavorites';
 const MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500';
 
 
-
-
-
-
-
 const Movie = (props) => {
     
     const FavouriteComponent = props.favouriteComponent;
     const movieInfo = props.movie;
+    const heartIcons = props.isLiked;
     
     return (
     <div className='movie'>
@@ -24,14 +20,11 @@ const Movie = (props) => {
             <h3 className='movie-title'>{movieInfo.title}</h3>
                 
                 
-                
-                
-                
                 <p>Rating: {movieInfo.vote_average}</p>
                 <p>Release Date: {movieInfo.release_date}</p>
                 
                 <div className='synopsis' >
-                    <i className='heart-icon' onClick={()=>props.handleFavsClick(movieInfo)}><FavouriteComponent  favouriteComponent={AddFavourites}/></i>
+                    <i className={heartIcons === true ? 'heart-fill':'heart-nofill'} onClick={()=>props.handleFavsClick(movieInfo)}><FavouriteComponent  favouriteComponent={AddFavourites}/></i>
                     <Link to={`detail/${movieInfo.id}`} state={{title:movieInfo.title, release_date:movieInfo.release_date, vote_average:movieInfo.vote_average, overview:movieInfo.overview, poster_path:movieInfo.poster_path}}>
                 <p>More Info</p>
                 </Link>

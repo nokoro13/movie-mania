@@ -2,13 +2,22 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import AddFavourites from '../components/AddFavorites';
 
-
 const PageFavorites = () => {
 
     const [favMov, setFavMov] = useState([]);
+    
+    function handleDelete(id){
+        const list = [...favMov];
+        const updateFavs = list.filter(fav => fav.id !== id);
+        setFavMov(updateFavs);
+        console.log(updateFavs);
+        localStorage.setItem('MY_FAVOURITE_MOVIES', JSON.stringify(updateFavs));
+    }
+       
+    
+    //localStorage.removeItem('MY_FAVOURITE_MOVIES')
 
-
-const MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500';
+    const MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500';
     
     useEffect(() => {
 		document.title = `Favorites`;
@@ -32,7 +41,7 @@ const MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500';
                             {<p>Rating: {fav.vote_average}</p>}
                             {<p>Release Date: {fav.release_date}</p>} 
                             <div className='synopsis' >
-                                <i className='heart-icon' >{<AddFavourites/>}</i>
+                                <i className='heart-fill' key={fav.id} onClick={()=> handleDelete(fav.id)}>{<AddFavourites/>}</i>
                                 <h2>Synopsis:</h2>
                                 <p> {fav.overview}</p>
                             </div>

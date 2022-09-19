@@ -20,6 +20,9 @@ const PageHome = () => {
 
     
     const [favs, setFavs] = useState( localStorage.getItem('MY_FAVOURITE_MOVIES') ===  null ? [] :  JSON.parse(localStorage.getItem('MY_FAVOURITE_MOVIES') ) );
+    const [favIds] = useState(favs.map((fav) => fav.id));
+
+    //favs.map((fav) => fav.id)
 
     useEffect(() => {
         document.title = `Home`;
@@ -33,9 +36,9 @@ const PageHome = () => {
         window.localStorage.setItem('MY_FAVOURITE_MOVIES', JSON.stringify(favs));
         console.log(favs);
     }, [favs]);
+    
 
 
-  
 //add an if statement to make sure the movie is not already in the new array
 //if (!favs.includes(movie)){
 //}
@@ -44,7 +47,7 @@ const PageHome = () => {
         if (!favs.includes(movie)){
             setFavs(newFavs);
         }
-        console.log(newFavs);   
+        
     }
 
     return (
@@ -67,7 +70,7 @@ const PageHome = () => {
     
             <div className='movie-layout'>
                 {movies.length > 0 && movies.map((movie) => (
-                <Movie key={movie.id}  handleFavsClick={addFavMovie} favouriteComponent={AddFavourites} movie={movie} />
+                <Movie key={movie.id} isLiked={favIds.includes(movie.id) ? true : false} handleFavsClick={addFavMovie} favouriteComponent={AddFavourites} movie={movie} />
                 ))}
             </div>
 

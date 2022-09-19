@@ -180,18 +180,18 @@ body {
 
 .heart-icon {
   color: red;
+  opacity: 50%;
 }
 
 .heart-fill {
-  fill: red;
+  color: red;
   transition: .6s ease-in-out;
   scale: 1.1;
   transform: rotateY(-180deg)rotate(360deg);
-  
 }
 
 .heart-nofill {
-  fill: red;
+  color: red;
   opacity: 50%;
   transition: .6s ease-in-out;
 }

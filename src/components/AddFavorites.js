@@ -3,11 +3,11 @@ import { HeartFill } from 'react-bootstrap-icons';
 
 const AddFavourites = () => {
 
+   
     
-
     return (
-        <div >
-            <HeartFill/>
+        <div>
+            <HeartFill />
         </div>
         
     )

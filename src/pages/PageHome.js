@@ -3,9 +3,9 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Movie from '../components/Movie';
 import AddFavourites from '../components/AddFavorites';
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 
-const MOVIE_API = 'https://api.themoviedb.org/3/movie/popular?api_key=b7cd5f614d98fb5d0dfc566e1e09dbe8&sort_by=popularity.desc&release_date'
+const MOVIE_API = 'https://api.themoviedb.org/3/movie/popular?api_key=b7cd5f614d98fb5d0dfc566e1e09dbe8&sort_by=popularity.desc&release_date';
 
 
 
@@ -39,15 +39,19 @@ const PageHome = () => {
     
 
 
+
 //add an if statement to make sure the movie is not already in the new array
 //if (!favs.includes(movie)){
 //}
     const addFavMovie = (movie) => {
         const newFavs = [...favs, movie];
+        
         if (!favs.includes(movie)){
             setFavs(newFavs);
-        }
+        } 
         
+        
+
     }
 
     return (

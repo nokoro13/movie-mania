@@ -274,5 +274,11 @@ button {
   text-decoration: none;
 }
 
+.favs-layout {
+ max-width: 55rem;
+ display: flex;
+ flex-direction: column;
+ margin: auto;
+}
 
 
